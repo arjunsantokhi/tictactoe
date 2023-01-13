@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tic tac toe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tic Tac Toe</h1>
+    </header>
+    <main>
+        <div class="form username-form">
+            <div class="higher-div username-height">
+                <h4>Username:</h4>
+                <input type="text" name="username" class="username space" value="Player 1" required>
+                <input type="text" name="username-two" class="username-two space" value="Player 2" required>
+            </div>
+            <button class="submit space-two">Submit</button>
+        </div>
+
+        <div class="wrapper blue-back-color">
+            <div class="boxes box1 row-1 col-1"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box2 row-2 col-1"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box3 row-3 col-1"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box4 row-1 col-2"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box5 row-2 col-2"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box6 row-3 col-2"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box7 row-1 col-3"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box8 row-2 col-3"><img src="img/blank.png" class="img-box" draggable="false"></div>
+            <div class="boxes box9 row-3 col-3"><img src="img/blank.png" class="img-box" draggable="false"></div>
+        </div>
+
+        <div class="form control-form">
+            <div class="higher-div">
+                <h3 class="player-one">Player1: 0</h3>
+                <h3 class="player-two">Player2: 0</h3>
+            </div>
+            <button class="restart space-two">Restart</button>
+            <button class="clear space-two">Clear</button>
+        </div>
+    </main>
+    <footer>
+        <p class="player-turn">O turn</p>
+    </footer>
+
+    <script src="js/lib.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
