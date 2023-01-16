@@ -168,9 +168,13 @@ function checkWinner(player) {
 
 function playGame(data) {
     console.log(data);
+    console.log(data.target.attributes[1].nodeValue.charAt(12));
 
-    let row = data.path[1].classList[2].charAt(4);
-    let col = data.path[1].classList[3].charAt(4);
+    //let row = data.path[1].classList[2].charAt(4);//outdated???
+    //let col = data.path[1].classList[3].charAt(4);
+
+    let row = data.target.attributes[1].nodeValue.charAt(12);
+    let col = data.target.attributes[1].nodeValue.charAt(18);
 
     //console.log(row);
     //console.log(col);

@@ -95,6 +95,32 @@ function endGame() {
     }
 }
 
+function generateRandomNum() {
+    let x = Math.floor(Math.random() * 3);
+    console.log(x);
+    return x;
+}
+
+function randomPlay(player, computer) {
+    let x = Math.floor(Math.random() * 3);
+    let y = Math.floor(Math.random() * 3);
+
+    if (turn == false) {
+        if (board[x][y] != player && board[x][y] == null) {
+            x = Math.floor(Math.random() * 3);
+            y = Math.floor(Math.random() * 3);
+            board[x][y] = computer;
+            imgBoard[y][x].attributes[0].nodeValue = "img/" + computer + ".png";
+            turn = true;
+        }
+        else {
+            x = Math.floor(Math.random() * 3);
+            y = Math.floor(Math.random() * 3);
+        }
+    }
+    console.log("x: " + x);
+    console.log("y: " + y);
+}
 
 function computerMover(player, computer) {
     let x = Math.floor(Math.random() * 3);
@@ -311,8 +337,12 @@ function turnAi() {
 function playGame(data) {
     console.log(data);
 
-    let row = data.path[1].classList[2].charAt(4);
-    let col = data.path[1].classList[3].charAt(4);
+    //outdated??
+    // let row = data.path[1].classList[2].charAt(4);
+    // let col = data.path[1].classList[3].charAt(4);
+
+    let row = data.target.attributes[1].nodeValue.charAt(12);
+    let col = data.target.attributes[1].nodeValue.charAt(18);
 
     //console.log(row);
     //console.log(col);
@@ -334,13 +364,11 @@ function playGame(data) {
             checkWinner("o");
             playerTurn.innerHTML = "X turn";
 
+            randomPlay("o", "x");
+
             //console.log(data.path[1].classList[2].charAt(4))
             //console.log(data.path[1].classList[3].charAt(4))
         }
-        else {
-            turnAi()
-        }
     }
-    console.log(localStorage.getItem('player-one-wins'));
     console.log(board);
 }
